@@ -9,9 +9,131 @@
  }
  
  body {
-   width: 50%;
    margin: auto;
-   background-image: url("./ChancayLogos/400dpiLogo.png");
-   background-size: cover;
-   background-repeat: no-repeat;
+   background-color: bisque;
  }
+
+ #wrapper {
+  padding:  6% 0%;
+}
+
+ @keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  /* 60% {
+        transform: rotate(20deg)
+    } */
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } 
+}
+
+#logo-heading {
+  text-align: center;
+  margin-top: 20rem;;
+
+  animation-name: moveInLeft;
+  animation-duration: 2s;
+  animation-timing-function: step-end;
+}
+
+@keyframes topHeader {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem); }
+  /* 60% {
+        transform: rotate(20deg)
+    } */
+  80% {
+    transform: translateY(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } 
+}
+
+#top-header {
+  position: absolute;
+  top: -3%;
+  left: 31%;
+
+  animation-name: topHeader;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes soulFood1 {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem); }
+  /* 60% {
+        transform: rotate(20deg)
+    } */
+  80% {
+    transform: translateY(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } 
+}
+
+#soul-food-1 {
+  position: absolute;
+  top: 15%;
+  width: 50%;
+
+  animation-name: soulFood1;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes soulFood2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  /* 60% {
+        transform: rotate(20deg)
+    } */
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } 
+}
+
+#soul-food-2 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 20%;
+
+  animation-name: soulFood2;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes soulFood3 {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  60% {
+        transform: rotate(20deg)
+    }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } 
+}
+
+#soul-food-3 {
+  position: absolute;
+  top: 55%;
+  left: 70%;
+  width: 20%;
+
+  animation-name: soulFood3;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+}
