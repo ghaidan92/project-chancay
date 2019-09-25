@@ -17,6 +17,14 @@
   padding:  6% 0%;
 }
 
+.header {
+  /* height: 100vh; */
+}
+
+.header-bg {
+  width: 75%;
+}
+
  @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -33,20 +41,19 @@
 
 #logo-heading {
   text-align: center;
-  margin-top: 20rem;;
 
   animation-name: moveInLeft;
   animation-duration: 2s;
   animation-timing-function: step-end;
 }
 
-@keyframes topHeader {
+/* @keyframes topHeader {
   0% {
     opacity: 0;
     transform: translateY(-10rem); }
-  /* 60% {
+   60% {
         transform: rotate(20deg)
-    } */
+    } 
   80% {
     transform: translateY(1rem); }
   100% {
@@ -62,7 +69,7 @@
   animation-name: topHeader;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
-}
+} */
 
 @keyframes soulFood1 {
   0% {
@@ -81,7 +88,7 @@
 #soul-food-1 {
   position: absolute;
   top: 15%;
-  width: 50%;
+  /* width: 50%; */
 
   animation-name: soulFood1;
   animation-duration: 2s;
@@ -104,9 +111,9 @@
 
 #soul-food-2 {
   position: absolute;
-  top: 5%;
-  left: 60%;
-  width: 20%;
+  top: 20%;
+  left: 75%;
+  /* width: 20%; */
 
   animation-name: soulFood2;
   animation-duration: 2s;
@@ -131,9 +138,65 @@
   position: absolute;
   top: 55%;
   left: 70%;
-  width: 20%;
+  /* width: 20%; */
 
   animation-name: soulFood3;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
 }
+
+@media only screen and (max-width: 1200px) {
+  .header-bg {
+    width: 40%;
+  }
+
+  #soul-food-3 {
+    top: 30%;
+    right: -12%;
+  }
+
+  #soul-food-2 {
+    top: 5%;
+    right: -12%;
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+  .header-bg {
+    width: 30%;
+  }
+
+  #soul-food-1 {
+    width: 75%;
+  }
+
+  #soul-food-3 {
+    top: 45%;
+    right: -12%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .header-bg {
+    width: 100%;
+  }
+
+  #logo-heading {
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+  }
+
+  #soul-food-1 {
+    display: none;
+  }
+
+  #soul-food-2 {
+    display: none;
+  }
+
+  #soul-food-3 {
+    display: none;
+  }
+} 
