@@ -21,6 +21,10 @@
   /* height: 100vh; */
 }
 
+#logo {
+  width: 65%;
+}
+
 .header-bg {
   width: 50%;
 }
@@ -88,7 +92,7 @@
 #soul-food-1 {
   position: absolute;
   top: 15%;
-  /* width: 50%; */
+  width: 65%;
 
   animation-name: soulFood1;
   animation-duration: 2s;
@@ -111,9 +115,9 @@
 
 #soul-food-2 {
   position: absolute;
-  top: 20%;
-  left: 75%;
-  /* width: 20%; */
+  top: 10%;
+  left: 68%;
+  width: 32%;
 
   animation-name: soulFood2;
   animation-duration: 2s;
@@ -138,7 +142,7 @@
   position: absolute;
   top: 55%;
   left: 70%;
-  /* width: 20%; */
+  width: 30%;
 
   animation-name: soulFood3;
   animation-duration: 5s;
