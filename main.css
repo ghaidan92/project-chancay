@@ -1,57 +1,198 @@
  /* RESET CSS */
+ 
  *,
  *::before,
  *::after {
-   margin: 0;
-   padding: 0;
-   box-sizing: inherit;
-   text-decoration: none;
+     margin: 0;
+     padding: 0;
+     box-sizing: inherit;
+     text-decoration: none;
  }
  
  body {
-   margin: auto;
-   background-color: bisque;
+     margin: auto;
+     background-color: bisque;
  }
-
+ 
+ .checkbox {
+     display: none;
+ }
+ 
+ .nav-btn {
+     background-color: white;
+     height: 7rem;
+     width: 7rem;
+     position: fixed;
+     top: 1rem;
+     left: 2.5rem;
+     border-radius: 50%;
+     z-index: 2000;
+     box-shadow: 0 1rem 3rem rgba(black, .1);
+     text-align: center;
+     cursor: pointer;
+ }
+ 
+ .nav-icon {
+     position: relative;
+     margin-top: 3.5rem;
+ }
+ 
+ .nav-icon,
+ .nav-icon::before,
+ .nav-icon::after {
+     width: 3rem;
+     height: 2px;
+     background-color: darkgrey;
+     display: inline-block;
+ }
+ 
+ .nav-icon::before,
+ .nav-icon::after {
+     content: "";
+     position: absolute;
+     left: 0;
+     transition: all .2s;
+ }
+ 
+ .nav-icon::before {
+     top: -.8rem;
+ }
+ 
+ .nav-icon::after {
+     top: .8rem;
+ }
+ 
+ .nav-bkgd {
+     height: 6rem;
+     width: 6rem;
+     border-radius: 50%;
+     position: fixed;
+     top: 1rem;
+     left: 3rem;
+     background-image: radial-gradient(grey, darkgrey);
+     z-index: 1000;
+     transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+ }
+ 
+ .nav {
+     height: 100vh;
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 1500;
+     visibility: hidden;
+     opacity: 0;
+     width: 0;
+     transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+ }
+ 
+ .nav-list {
+     margin-top: 10rem;
+     list-style: none;
+     text-align: center;
+     width: 100%;
+ }
+ 
+ .nav-item {
+     margin: 1rem;
+ }
+ 
+ .nav-link,
+ .nav-link:link,
+ .nav-link:visited {
+     display: inline-block;
+     font-size: 3rem;
+     font-weight: 300;
+     padding: 1rem 2rem;
+     color: white;
+     text-decoration: none;
+     text-transform: uppercase;
+     /* for the link animations */
+     /* background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%); */
+     background-size: 220%;
+     transition: all .4s;
+ }
+ 
+ .nav-link:hover,
+ .nav-link:active {
+     background-position: 100%;
+     color: bisque;
+     transform: translateX(1rem);
+ }
+ /* Nav Functionality */
+ 
+ .checkbox:checked~.nav-bkgd {
+     transform: scale(80);
+ }
+ 
+ .checkbox:checked~.nav {
+     visibility: visible;
+     opacity: 1;
+     width: 100%;
+ }
+ 
+ .nav-btn:hover .nav-icon::before {
+     top: -1rem;
+ }
+ 
+ .nav-btn:hover .nav-icon::after {
+     top: 1rem;
+ }
+ 
+ .checkbox:checked+.nav-btn .nav-icon {
+     background-color: transparent;
+ }
+ 
+ .checkbox:checked+.nav-btn .nav-icon::before {
+     top: 0;
+     transform: rotate(135deg);
+ }
+ 
+ .checkbox:checked+.nav-btn .nav-icon::after {
+     top: 0;
+     transform: rotate(-135deg);
+ }
+ 
  #wrapper {
-  padding:  6% 0%;
-}
-
-.header {
-  /* height: 100vh; */
-}
-
-#logo {
-  width: 65%;
-}
-
-.header-bg {
-  width: 50%;
-}
-
+     padding: 6% 0%;
+ }
+ 
+ .header {
+     /* height: 100vh; */
+ }
+ 
+ #logo {
+     width: 65%;
+ }
+ 
+ .header-bg {
+     width: 50%;
+ }
+ 
  @keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  /* 60% {
+     0% {
+         opacity: 0;
+         transform: translateX(-10rem);
+     }
+     /* 60% {
         transform: rotate(20deg)
     } */
-  80% {
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } 
-}
-
-#logo-heading {
-  text-align: center;
-
-  animation-name: moveInLeft;
-  animation-duration: 2s;
-  animation-timing-function: step-end;
-}
-
-/* @keyframes topHeader {
+     80% {
+         transform: translateX(1rem);
+     }
+     100% {
+         opacity: 1;
+         transform: translate(0);
+     }
+ }
+ 
+ #logo-heading {
+     text-align: center;
+     animation-name: moveInLeft;
+     animation-duration: 2s;
+     animation-timing-function: ease-out;
+ }
+ /* @keyframes topHeader {
   0% {
     opacity: 0;
     transform: translateY(-10rem); }
@@ -74,133 +215,183 @@
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
 } */
-
-@keyframes soulFood1 {
-  0% {
-    opacity: 0;
-    transform: translateY(-10rem); }
-  /* 60% {
+ 
+ @keyframes soulFood1 {
+     0% {
+         opacity: 0;
+         transform: translateY(-10rem);
+     }
+     /* 60% {
         transform: rotate(20deg)
     } */
-  80% {
-    transform: translateY(1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } 
-}
-
-#soul-food-1 {
-  position: absolute;
-  top: 15%;
-  width: 65%;
-
-  animation-name: soulFood1;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes soulFood2 {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  /* 60% {
+     80% {
+         transform: translateY(1rem);
+     }
+     100% {
+         opacity: 1;
+         transform: translate(0);
+     }
+ }
+ 
+ #soul-food-1 {
+     position: absolute;
+     top: 15%;
+     width: 65%;
+     animation-name: soulFood1;
+     animation-duration: 2s;
+     animation-timing-function: ease-in-out;
+ }
+ 
+ @keyframes soulFood2 {
+     0% {
+         opacity: 0;
+         transform: translateX(-10rem);
+     }
+     /* 60% {
         transform: rotate(20deg)
     } */
-  80% {
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } 
-}
-
-#soul-food-2 {
-  position: absolute;
-  top: 10%;
-  left: 68%;
-  width: 32%;
-
-  animation-name: soulFood2;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes soulFood3 {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  60% {
-        transform: rotate(20deg)
-    }
-  80% {
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } 
-}
-
-#soul-food-3 {
-  position: absolute;
-  top: 55%;
-  left: 70%;
-  width: 30%;
-
-  animation-name: soulFood3;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-}
-
-@media only screen and (max-width: 1200px) {
-  .header-bg {
-    width: 40%;
-  }
-
-  #soul-food-3 {
-    top: 30%;
-    right: -12%;
-  }
-
-  #soul-food-2 {
-    top: 5%;
-    right: -12%;
-  }
-}
-
-
-@media only screen and (max-width: 900px) {
-  .header-bg {
-    width: 30%;
-  }
-
-  #soul-food-1 {
-    width: 75%;
-  }
-
-  #soul-food-3 {
-    top: 25%;
-    right: -12%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-
-  .header-bg {
-    width: 100%;
-  }
-
-  #logo-heading {
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-  }
-
-  #soul-food-1 {
-    display: none;
-  }
-
-  #soul-food-2 {
-    display: none;
-  }
-
-  #soul-food-3 {
-    display: none;
-  }
-} 
+     80% {
+         transform: translateX(1rem);
+     }
+     100% {
+         opacity: 1;
+         transform: translate(0);
+     }
+ }
+ 
+ #soul-food-2 {
+     position: absolute;
+     top: 10%;
+     left: 68%;
+     width: 32%;
+     animation-name: soulFood2;
+     animation-duration: 2s;
+     animation-timing-function: ease-in-out;
+ }
+ 
+ @keyframes soulFood3 {
+     0% {
+         opacity: 0;
+         transform: translateX(-10rem);
+     }
+     60% {
+         transform: rotate(20deg)
+     }
+     80% {
+         transform: translateX(1rem);
+     }
+     100% {
+         opacity: 1;
+         transform: translate(0);
+     }
+ }
+ 
+ #soul-food-3 {
+     position: absolute;
+     top: 55%;
+     left: 70%;
+     width: 30%;
+     animation-name: soulFood3;
+     animation-duration: 5s;
+     animation-timing-function: ease-in-out;
+ }
+ 
+ @media only screen and (max-width: 1200px) {
+     .header-bg {
+         width: 40%;
+     }
+     #soul-food-3 {
+         top: 30%;
+         right: -12%;
+     }
+     #soul-food-2 {
+         top: 5%;
+         right: -12%;
+     }
+ }
+ 
+ @media only screen and (max-width: 900px) {
+     .header-bg {
+         width: 30%;
+     }
+     #soul-food-1 {
+         width: 75%;
+     }
+     #soul-food-3 {
+         top: 25%;
+         right: -12%;
+     }
+ }
+ 
+ @media only screen and (max-width: 600px) {
+     .header-bg {
+         width: 100%;
+     }
+     #logo-heading {
+         animation-duration: 2s;
+         animation-timing-function: ease-in-out;
+     }
+     #soul-food-1 {
+         display: none;
+     }
+     #soul-food-2 {
+         display: none;
+     }
+     #soul-food-3 {
+         display: none;
+     }
+ }
+ /* Welcome */
+ 
+ .section {
+     background: transparent;
+     padding: 5.1rem 1.5rem;
+     display: block;
+ }
+ 
+ .hero {
+     align-items: stretch;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+ 
+ .hero-body {
+     padding: 3rem 1.5rem;
+     flex-grow: 1;
+     flex-shrink: 0;
+ }
+ 
+ .container {
+     position: relative;
+ }
+ 
+ @media screen and (min-width: 1216px) {
+     .container {
+         max-width: 1152px;
+         width: 1152px;
+     }
+ }
+ 
+ @media screen and (min-width: 1024) {
+     .container {
+         max-width: 960px;
+         width: 960px;
+     }
+ }
+ 
+ .columns {
+     margin: -.75rem -.75rem 0rem -.75rem;
+ }
+ 
+ .column {
+     display: block;
+     padding: .75rem;
+     width: 66.66667%;
+     margin-left: 30rem;
+ }
+ 
+ p {
+     text-align: center;
+     font-size: 30px;
+ }

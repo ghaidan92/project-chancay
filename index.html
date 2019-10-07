@@ -8,9 +8,34 @@
     <link rel="shortcut icon" href="./ChancayLogos/FaviconLogo.png" />
     <title>Chancay Peruvian Cuisine</title>
     <link rel="stylesheet" href="main.css">
+
+    <script>
+        function closeNav() {
+            document.getElementById("navi-toggle").checked = false;
+        }
+    </script>
 </head>
 
 <body>
+    <div class="navigation">
+        <input type="checkbox" class="checkbox" id="navi-toggle">
+
+        <label for="navi-toggle" class="nav-btn">
+            <span class="nav-icon">&nbsp;</span>
+        </label>
+
+        <div class="nav-bkgd">&nbsp;</div>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link" onclick="closeNav()">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="closeNav()">Menu</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="closeNav()">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="closeNav()">Contact Us!</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
     <div id="wrapper">
         <!-- Navigation -->
 
@@ -18,10 +43,31 @@
         <div class="header">
             <div id="logo-heading"><img id="logo" src="./ChancayLogos/FacebookCover.png" alt="Logo"></div>
             <!-- <div id="top-header"><img src="./ChancayLogos/images/top-header.png" alt="Soul Food"></div>     -->
-            <div id="soul-food-1"><img class="header-bg" src="./ChancayLogos/images/soul-food.png" alt="Soul Food"></div>
-            <div id="soul-food-2"><img class="header-bg" src="./ChancayLogos/images/soul-food2.png" alt="Soul Food"></div>
-            <div id="soul-food-3"><img class="header-bg" src="./ChancayLogos/images/soul-food3.png" alt="Soul Food"></div>
+            <div id="soul-food-1"><img class="header-bg" src="./ChancayLogos/images/soul-food.png" alt="Soul Food">
+            </div>
+            <div id="soul-food-2"><img class="header-bg" src="./ChancayLogos/images/soul-food2.png" alt="Soul Food">
+            </div>
+            <div id="soul-food-3"><img class="header-bg" src="./ChancayLogos/images/soul-food3.png" alt="Soul Food">
+            </div>
         </div>
+
+        <!-- Message -->
+        <section class="section welcome">
+            <div class="hero">
+                <img src="" alt="">
+                <div class="hero-body">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <p>Chancay is your living room, dinning room or terrace. We celebrate food and its diversity as a family, especially Peruvian home cooking, that prepared by our mothers and grandmothers.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="" alt="">
+            </div>
+        </section>
     </div>
 </body>
 
