@@ -19,7 +19,8 @@
  }
  
  .nav-btn {
-     background-color: white;
+     background-image: url("/ChancayLogos/FaviconLogo.jpg");
+     background-size: cover;
      height: 7rem;
      width: 7rem;
      position: fixed;
@@ -354,10 +355,12 @@
      display: flex;
      flex-direction: column;
      justify-content: space-between;
+     text-align: center;
+     margin-top: 6rem;
  }
  
  .hero-body {
-     padding: 3rem 1.5rem;
+     padding: 2rem 1.5rem;
      flex-grow: 1;
      flex-shrink: 0;
  }
